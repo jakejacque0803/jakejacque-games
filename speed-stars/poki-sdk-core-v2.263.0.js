@@ -1,3 +1,22 @@
+/*!
+ * Poki SDK Core v2.263.0
+ * --------------------------------------------------
+ * Third-party SDK provided by Poki.
+ *
+ * Responsibilities:
+ * - Advertisement handling (commercial & rewarded)
+ * - Consent & privacy management
+ * - Analytics & telemetry
+ * - Platform communication
+ * - Leaderboards & monetization hooks
+ *
+ * ⚠️ IMPORTANT:
+ * This file is vendor-owned and intentionally minified.
+ * Do NOT modify internal logic, variable names, or structure.
+ * Any changes may break SDK functionality or Poki approval.
+ *
+ * Used by Speed Stars for Poki platform compatibility.
+ */
 (() => {
 	var e = {
 			564: (e, t, i) => {
