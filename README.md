@@ -1,4 +1,4 @@
-# What's SpeedStars?
+# What is Speed Stars About?
 Speed Stars is a unique, high-intensity running game inspired by real-world track competitions, where the goal is brutally simple: beat the racer beside you and cross the finish line first.
 
 Create your athlete, step onto the track, and compete in sprints and relays as you chase personal bests, world records, and leaderboard dominance. Victory isn’t about button-mashing — it’s about rhythm, precision, and control.
