@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ======================================================
+       Basic Metadata
+       ====================================================== -->
   <meta charset="utf-8" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no"
+  />
 
   <title>Speed Stars</title>
 
+  <!-- ======================================================
+       Unity / Poki Configuration
+       DO NOT CHANGE VALUES (Unity-sensitive)
+       ====================================================== -->
   <script>
-    /**
-     * Global configuration used by master-loader.js
-     * Behavior unchanged — formatting only.
-     */
     window.config = {
       loader: "unity-2020",
       debug: false,
 
-      // Aspect ratio limits
       maxRatio: 24 / 9,
       minRatio: 9 / 24,
 
-      // Game metadata
       title: "Speed Stars",
-      thumbnail: "https://img.poki-cdn.com/04f09e51e79fd1b6a5cc974b504d6379.png",
+      thumbnail:
+        "https://img.poki-cdn.com/04f09e51e79fd1b6a5cc974b504d6379.png",
       numScreenshots: 0,
 
-      // Unity build info
       unityVersion: "2022.3.19f1",
       unityWebglBuildUrl: "",
 
-      // File size (MB)
       fileSize: 37,
 
-      // Cached file sizes (bytes)
       cachedDecompressedFileSizes: {
         "6127fbba3e79cbcada24ba1ffd033f77.data": 13472152,
         "Build_v2-40w.loader.js": 20642,
@@ -39,38 +42,52 @@
         "fe2a5824416bebe1cc941510618103f9.wasm": 23552919,
       },
 
-      // Unity metadata (auto-generated)
       metadata: {
         poki_template_version: 1,
-        background_color: "#231F20",
-        code_filename: "fe2a5824416bebe1cc941510618103f9.wasm",
-        company_name: "Luke Doukakis",
-        data_filename: "6127fbba3e79cbcada24ba1ffd033f77.data",
-        development_player: "false",
+        background_color: "#23",
+        player: "false",
         framework_filename: "b0e5ec181474d494c6ff3c9ad9c3b1bd.js",
-        height: "360",
+        data_filename: "6127fbba3e79cbcada24ba1ffd033f77.data",
+        wasm_filename: "fe2a5824416bebe1cc941510618103f9.wasm",
         loader_filename: "Build_v2-40w.loader.js",
-        product_name: "Speed Stars",
-        product_version: "2.40",
-        splash_screen_style: "Dark",
-        unity_version: "2022.3.19f1",
-        use_data_caching: "true",
-        use_threads: "false",
-        use_wasm: "true",
-        use_webgl_1_0: "false",
-        use_webgl_2_0: "true",
-        width: "640",
       },
     };
   </script>
 
-  <!-- Content here will be copied into the final build head -->
+  <!-- ======================================================
+       Styles
+       ====================================================== -->
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    #unity-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Master loader bootstraps Poki SDK and Unity WebGL -->
-  <script src="./master-loader.js"></script>
+  <!-- ======================================================
+       Unity Container
+       ====================================================== -->
+  <div id="unity-container"></div>
 
-  <!-- Content here will be copied into the final build body -->
+  <!-- ======================================================
+       Unity Loader (DO NOT MOVE / RENAME)
+       ====================================================== -->
+  <script src="master-loader.js"></script>
 </body>
 </html>
