@@ -2,75 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
   <title>Speed Stars</title>
+
+  <!-- Mobile & scaling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- SEO -->
+  <meta name="description" content="Speed Stars – A fast-paced sprinting game. Time your rhythm and race to victory!" />
+
+  <!-- Social Preview -->
+  <meta property="og:title" content="Speed Stars" />
+  <meta property="og:description" content="Test your speed in this rhythm-based sprinting game!" />
+  <meta property="og:image" content="https://img.poki-cdn.com/04f09e51e79fd1b6a5cc974b504d6379.png" />
+
+  <style>
+    body {
+      margin: 0;
+      background: #231F20;
+      overflow: hidden;
+    }
+
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: #231F20;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      z-index: 9999;
+    }
+
+    #loading-screen h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    #loading-screen p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  </style>
 
   <script>
     /**
-     * Global configuration used by master-loader.js
-     * Behavior unchanged — formatting only.
+     * Global configuration for master-loader.js
      */
     window.config = {
       loader: "unity-2020",
       debug: false,
 
-      // Aspect ratio limits
       maxRatio: 24 / 9,
       minRatio: 9 / 24,
 
-      // Game metadata
       title: "Speed Stars",
       thumbnail: "https://img.poki-cdn.com/04f09e51e79fd1b6a5cc974b504d6379.png",
-      numScreenshots: 0,
 
-      // Unity build info
       unityVersion: "2022.3.19f1",
       unityWebglBuildUrl: "",
 
-      // File size (MB)
       fileSize: 37,
 
-      // Cached file sizes (bytes)
       cachedDecompressedFileSizes: {
         "6127fbba3e79cbcada24ba1ffd033f77.data": 13472152,
         "Build_v2-40w.loader.js": 20642,
         "b0e5ec181474d494c6ff3c9ad9c3b1bd.js": 405098,
-        "fe2a5824416bebe1cc941510618103f9.wasm": 23552919,
+        "fe2a5824416bebe1cc941510618103f9.wasm": 23552919
       },
 
-      // Unity metadata (auto-generated)
       metadata: {
-        poki_template_version: 1,
         background_color: "#231F20",
-        code_filename: "fe2a5824416bebe1cc941510618103f9.wasm",
-        company_name: "Luke Doukakis",
-        data_filename: "6127fbba3e79cbcada24ba1ffd033f77.data",
-        development_player: "false",
-        framework_filename: "b0e5ec181474d494c6ff3c9ad9c3b1bd.js",
-        height: "360",
-        loader_filename: "Build_v2-40w.loader.js",
         product_name: "Speed Stars",
         product_version: "2.40",
-        splash_screen_style: "Dark",
-        unity_version: "2022.3.19f1",
-        use_data_caching: "true",
-        use_threads: "false",
-        use_wasm: "true",
-        use_webgl_1_0: "false",
-        use_webgl_2_0: "true",
         width: "640",
-      },
+        height: "360"
+      }
     };
   </script>
-
-  <!-- Content here will be copied into the final build head -->
 </head>
 
 <body>
-  <!-- Master loader bootstraps Poki SDK and Unity WebGL -->
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <h1>Speed Stars</h1>
+    <p>Loading… Get ready to sprint 🏃‍♂️</p>
+  </div>
+
+  <!-- Unity + Poki Loader -->
   <script src="./master-loader.js"></script>
 
-  <!-- Content here will be copied into the final build body -->
+  <!-- Auto fullscreen on first interaction (mobile friendly) -->
+  <script>
+    document.addEventListener("click", () => {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      }
+    });
+
+    // Hide loading screen once Unity starts
+    setTimeout(() => {
+      const loading = document.getElementById("loading-screen");
+      if (loading) loading.style.display = "none";
+    }, 8000); // fallback in case Unity doesn't remove it
+  </script>
+
 </body>
 </html>
