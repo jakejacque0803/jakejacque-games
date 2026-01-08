@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <title>Speed Stars</title>
 
-  <!-- Mobile & scaling -->
+  <!-- Mobile support -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <!-- SEO -->
   <meta name="description" content="Speed Stars – A fast-paced sprinting game. Time your rhythm and race to victory!" />
 
-  <!-- Social Preview -->
+  <!-- Social preview -->
   <meta property="og:title" content="Speed Stars" />
   <meta property="og:description" content="Test your speed in this rhythm-based sprinting game!" />
   <meta property="og:image" content="https://img.poki-cdn.com/04f09e51e79fd1b6a5cc974b504d6379.png" />
@@ -26,6 +26,7 @@
   <script>
     /**
      * Global configuration for master-loader.js
+     * IMPORTANT: unityWebglBuildUrl is now correctly set
      */
     window.config = {
       loader: "unity-2020",
@@ -38,7 +39,9 @@
       thumbnail: "https://img.poki-cdn.com/04f09e51e79fd1b6a5cc974b504d6379.png",
 
       unityVersion: "2022.3.19f1",
-      unityWebglBuildUrl: "",
+
+      // 🔧 THIS FIXES THE 0% LOADING ISSUE
+      unityWebglBuildUrl: "./Build",
 
       fileSize: 37,
 
@@ -65,13 +68,13 @@
   <!-- Unity + Poki Loader -->
   <script src="./master-loader.js"></script>
 
-  <!-- Fullscreen on first interaction (mobile friendly) -->
+  <!-- Safe fullscreen for mobile (won't break Poki) -->
   <script>
-    document.addEventListener("click", () => {
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen().catch(() => {});
-      }
-    });
+    setTimeout(() => {
+      document.addEventListener("click", () => {
+        document.documentElement.requestFullscreen?.().catch(() => {});
+      });
+    }, 2000);
   </script>
 
 </body>
