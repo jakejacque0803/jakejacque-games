@@ -21,30 +21,6 @@
       background: #231F20;
       overflow: hidden;
     }
-
-    #loading-screen {
-      position: fixed;
-      inset: 0;
-      background: #231F20;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      z-index: 9999;
-    }
-
-    #loading-screen h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    #loading-screen p {
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
   </style>
 
   <script>
@@ -86,28 +62,16 @@
 
 <body>
 
-  <!-- Loading Screen -->
-  <div id="loading-screen">
-    <h1>Speed Stars</h1>
-    <p>Loading… Get ready to sprint 🏃‍♂️</p>
-  </div>
-
   <!-- Unity + Poki Loader -->
   <script src="./master-loader.js"></script>
 
-  <!-- Auto fullscreen on first interaction (mobile friendly) -->
+  <!-- Fullscreen on first interaction (mobile friendly) -->
   <script>
     document.addEventListener("click", () => {
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen().catch(() => {});
       }
     });
-
-    // Hide loading screen once Unity starts
-    setTimeout(() => {
-      const loading = document.getElementById("loading-screen");
-      if (loading) loading.style.display = "none";
-    }, 8000); // fallback in case Unity doesn't remove it
   </script>
 
 </body>
